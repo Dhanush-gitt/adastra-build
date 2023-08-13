@@ -1,0 +1,17 @@
+# .github/workflows/publish.yml
+name: Generate a build and push to another branch
+
+on:
+  push:
+    branches:
+      - master # Remove this line if your primary branch is "main"
+      - main # Remove this line if your primary branch is "master"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Checkout
+    steps:
+      - name: git-checkout
+        uses: actions/checkout@v2
+      - run: ls
